@@ -24,8 +24,8 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: 1rem;
+    justify-content: space-between;
+    /* padding: 1rem; */
     background-color: #ff235a;
     color: #ffffff;
     border-bottom: 8px solid #750f25;
@@ -34,22 +34,39 @@ header {
     height: 100px;
 }
 
-header img {
+header a, header img {
     height: 100%;
+    padding: 0.5rem;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
 }
 
 header nav a {
+    background-color: #ff235a;
+    display: inline-flex;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    padding: 2em;
+    padding: 0 2em;
     transition: all 0.3s ease-in-out;
+    transform: translateY(0px);
+    height: 92px;
+    text-align: center;
+    border-bottom: 0px solid #750f25;
+    align-items: center;
+    justify-content: center;
 }
 
 header nav a:hover {
-    color: #ffdde5;
+    box-shadow: 0px 4px 0px #750f25;
+    /* color: #ffdde5; */
     background-color: #cd1238;
-    transform: translateY(2px);
+    transform: translateY(-4px);
 }
 
 main {
@@ -73,29 +90,37 @@ section {
     display: inline-block;
     background-color: #ff235a;
     color: #ffffff;
-    box-shadow: 0px 4px 0px #4d0a13;
+    box-shadow: 0px 6px 0px #6c0816;
     text-decoration: none;
     padding: 1em;
     border-radius: 5px;
-    transform: translateY(0px);
+    transform: translateY(-6px);
     transition: all 0.2s ease-in-out;
+}
+
+.btn i {
+    color: #ffffff;
 }
 
 .btn:hover {
     background-color: #cd1238;
-    /* transform: translateY(2px); */
-    animation: easeOutElastic 1.2s ease;
-    box-shadow: 0px 2px 0px #4d0a13;
-    transform: translateY(2px);
+    box-shadow: 0px 4px 0px #6c0816;
+    transform: translateY(-4px);
 }
 
+.btn:active {
+    background-color: #b31031;
+    box-shadow: 0px 0px 0px #6c0816;
+    transform: translateY(0px);
+}
+/*
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    background-color: #643a45;
+    background-color: #342227;
     color: #ffffff;
     border-bottom: 8px solid #25030a;
     width: calc(100% - 32rem);
@@ -133,7 +158,7 @@ footer .footer-links a:last-child {
 
 footer .footer-links a:hover {
     color: #ff4f78;
-}
+}*/
 
 .card-container {
     display: flex;
@@ -163,4 +188,158 @@ footer .footer-links a:hover {
 .project-card .btn {
     align-self: flex-end;
     margin-top: auto;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1em; /* Add some space between the buttons */
+}
+
+.contact-links a {
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff235a;
+    box-shadow: 0px 6px 0px #6c0816;
+    text-align: center;
+    padding: 1.5em; /* Increase padding to make it more square */
+    border-radius: 5px;
+    width: 8em; /* Set a fixed width to make them square-ish */
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-links a i {
+    font-size: 2em;
+    text-shadow: 0px 2px 0px #96001e5a;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+}
+
+.contact-links a img {
+    height: 2em;
+    filter: drop-shadow(0px 2px 0px #96001e5a);
+    margin-bottom: 0.5em;
+}
+
+.contact-links a:hover {
+    background-color: #cd1238;
+    box-shadow: 0px 4px 0px #6c0816;
+    transform: translateY(2px);
+}
+
+.contact-links a:active {
+    background-color: #b31031;
+    box-shadow: 0px 0px 0px #6c0816;
+    transform: translateY(6px);
+}
+
+.contact-links a span { /* Style for the text below the icon */
+    margin-top: 0.5em; /* Space between icon and text */
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+i {
+    color: #ff235a;
+}
+
+.img-icon {
+    width: auto;
+    height: 1em;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #342227;
+    color: #ffffff;
+    padding: 2rem;
+    margin: 2rem auto; /* Centers the footer with space above and below */
+    width: calc(100% - 8rem); /* Matches the width of your header */
+    max-width: 1200px; /* Good practice for very large screens */
+    border-radius: 5px;
+    border-bottom: 8px solid #25030a; /* Consistent with your header's border */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px; /* Adjusted for better wrapping in a smaller container */
+    margin: 1rem;
+}
+
+.footer-section h3 {
+    color: #ff235a;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section p, .footer-section ul {
+    line-height: 1.6;
+}
+
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.links ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section.links ul li a:hover {
+    color: #ff4f78;
+}
+
+.social-links a {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+.social-links a:hover {
+    color: #ff4f78;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
