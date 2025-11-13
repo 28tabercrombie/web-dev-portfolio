@@ -57,13 +57,12 @@ header nav a {
     transform: translateY(0px);
     height: 92px;
     text-align: center;
-    border-bottom: 0px solid #750f25;
+    box-shadow: 0px 4px 0px #750f25;
     align-items: center;
     justify-content: center;
 }
 
 header nav a:hover {
-    box-shadow: 0px 4px 0px #750f25;
     /* color: #ffdde5; */
     background-color: #cd1238;
     transform: translateY(-4px);
