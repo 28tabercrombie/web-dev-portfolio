@@ -258,8 +258,8 @@ footer .footer-links a:hover {
     justify-content: center; /* Center items vertically */
     text-decoration: none;
     color: #ffffff;
-    background-color: #ff235a;
-    box-shadow: 0px 6px 0px #6c0816;
+    /* background-color: #ff235a; */
+    /* box-shadow: 0px 6px 0px #6c0816; */
     text-align: center;
     padding: 1.5em; /* Increase padding to make it more square */
     border-radius: 5px;
@@ -278,18 +278,6 @@ footer .footer-links a:hover {
     height: 2em;
     filter: drop-shadow(0px 3px 0px #96001e5a);
     margin-bottom: 0.5em;
-}
-
-.contact-links a:hover {
-    background-color: #cd1238;
-    box-shadow: 0px 4px 0px #6c0816;
-    transform: translateY(2px);
-}
-
-.contact-links a:active {
-    background-color: #b31031;
-    box-shadow: 0px 0px 0px #6c0816;
-    transform: translateY(6px);
 }
 
 .contact-links a span { /* Style for the text below the icon */
@@ -330,15 +318,11 @@ i {
 
 /* Carousel */
 
-.carousel {
-    /* background-color: #465848; */
-    width: 100%;
-    /* max-width: 1000px; */
-    margin: auto;
-}
-
 .carousel-container {
     height: fit-content;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .carousel-container > div {
@@ -348,8 +332,8 @@ i {
 
 .carousel-img {
     position: relative;
-    /* width: 100%; */
-    height: 30em;
+    width: 100%;
+    /* height: 30em; */
     aspect-ratio: 16 / 9;
     background-image: url("/assets/images/slide_0.jpg");
     background-position: center;
@@ -622,6 +606,14 @@ footer {
     }
 
     main {
+        width: 100%;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .contact-links a {
         width: 100%;
     }
 }
