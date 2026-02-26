@@ -14,7 +14,7 @@
         </a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portfolio.html" class="active-page">Portfolio</a>
             <a href="skills.html">Skills</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -69,5 +69,19 @@
             <a href="contact.html">Contact</a>
         </div>
     </footer>
+    <noscript>
+        <style>
+            main {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        let main = document.querySelector("main");
+        main.style.setProperty("opacity", "0");
+        window.onload = () => {
+            main.style.setProperty("opacity", "1", "important");
+        }
+    </script>
 </body>
 </html>

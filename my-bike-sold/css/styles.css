@@ -1,0 +1,440 @@
+/* Global Style Rules */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    /* add 3 more fonts for a font stack */
+    /* here */
+    /* here */
+    /* here */
+    font-size: 18px;
+}
+
+main {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    padding: 3em 6em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    /* height: auto; */
+}
+
+h1 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 4em;
+    font-weight: 900;
+    margin: 0.2em 0;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    margin: 0.2em 0;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0.2em 0;
+    text-align: center;
+}
+
+a {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+.btn {
+    font-size: 1em;
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 700;
+    border: 2px solid #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #000000;
+    color: #ff0000;
+}
+
+/* Header and Nav Style Rules */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232323;
+    color: #ffffff;
+    padding: 0 2em;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+header img {
+    width: 15em;
+    padding: 1em 0;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 0em;
+    margin: 0;
+    padding: 2em;
+    height: 100%;
+}
+
+header ul li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #232323;
+}
+
+header ul li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0em 1em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: #181818;
+}
+
+/* Hero and How Style Rules */
+.hero {
+    background-image: url('../images/bike_hero.jpg');
+    background-size: cover;
+    min-height: 90vh;
+    padding: 3em;
+    width: 100%;
+}
+
+.hero h1 {
+    margin-bottom: 0.25em;
+    color: #232323;
+}
+
+.how-it-works .flex-item {
+    flex: 1;
+    padding: 1em;
+    text-align: left;
+    align-self: baseline;
+}
+
+.how-it-works .flex-item img {
+    display: block;
+    margin: auto;
+    width: 45%;
+}
+
+.how-it-works .flex-item p {
+    font-size: 24px;
+}
+
+/* Who We Are Style Rules */
+.who-we-are {
+    background-color: #adc5e4;
+}
+
+.who-we-are .flex-container {
+    align-items: flex-start;
+}
+
+.who-we-are .flex-item {
+    flex-basis: 48%;
+}
+
+.who-we-are-image {
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+.who-we-are-image img {
+    margin: 0 auto;
+    border: 10px solid #dd0000;
+    box-sizing: border-box;
+}
+
+.who-we-are ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2em;
+    margin: 0 2em;
+    line-height: 1.6em;
+}
+
+.who-we-are ul li i {
+    color: #ff0000;
+    margin-right: 0.5em;
+}
+
+/* Testimonials Style Rules */
+.testimonials .flex-container {
+    align-items: stretch;
+}
+
+.testimonials .flex-item {
+    flex-basis: 48%;
+    margin: auto;
+}
+
+.testimonials .customer-name {
+    font-weight: bold;
+    color: #282828;
+}
+
+.testimonials .icon-quote {
+    font-style: italic;
+    color: #ff0000;
+    font-size: 4em;
+    float: left;
+    margin-right: 0.2em;
+}
+
+/* Ready to Sell Style Rules */
+.ready-to-sell {
+    background-color: #adc5e4;
+    text-align: center;
+    padding: 3em 6em;
+}
+
+.ready-to-sell .flex-container {
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* Brand Logos Style Rules */
+.brands {
+    background-color: #f4f4f4;
+    padding: 2em 6em;
+    text-align: center;
+}
+
+.brands .flex-container {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2em;
+    flex-direction: row;
+}
+
+.brands .flex-item {
+    flex: 1;
+    max-width: 150px;
+}
+
+/* Footer Style Rules */
+footer {
+    background-color: #282828;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 2em;
+    font-size: 1.25em;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ff0000;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline;
+    padding: 0 0.25em;
+    color: #ff0000;
+    font-size: 2em;
+}
+
+footer ul li a:hover {
+    color: #cc0000;
+}
+
+
+
+/* Inventory Style Rules */
+.bike {
+    padding: 1.5em 2em;
+    border-bottom: 3px dashed #ff0000;
+}
+
+.bike table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    box-sizing: border-box;
+    /* Use automatic table layout so columns size to content by default */
+    table-layout: auto;
+}
+.bike td, .bike th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 0.5em 1em;
+    /* let cells size naturally; don't force 50% width */
+    width: auto;
+    word-break: break-word;
+}
+.bike th:first-child, .bike td:first-child {
+    /* Make the first column shrink to fit its content while keeping labels on one line */
+    white-space: nowrap;
+    /* A tiny width hint helps some browsers shrink the column to its content */
+    width: 1%;
+}
+
+/* Ensure the second column can expand and wrap as needed */
+.bike th:first-child + th, .bike td:first-child + td,
+.bike th:first-child + td, .bike td:first-child + td {
+    width: auto;
+}
+
+
+.bike img, .bike .flex-item {
+    margin: 0;
+    padding: 0;
+    /* width: 100%; */
+    box-sizing: border-box;
+}
+
+.bike .flex-container {
+    margin: 2em auto;
+    align-items: center;
+    gap: 4em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+/* Contact Page Style Rules */
+.contact {
+    width: 65%;
+    margin: auto;
+}
+
+.contact-form {
+    width: 60%;
+    min-width: 20em;
+    margin: auto;
+    /* padding-bottom: 4em; */
+}
+
+.contact-form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 3em auto;
+    background-color: #e9e9e9;
+    border: 1px solid #000000;
+    padding: 2em;
+    padding-top: 1em;
+}
+
+.contact-form legend {
+    text-align: left;
+    /* margin-top: -.7em;
+    padding-left: 1em; */
+    color: #aa0000;
+}
+
+.contact-form .required {
+    color: #aa0000;
+}
+
+.contact-form fieldset input[type="text"] {
+    height: 3em;
+    padding: 0 1em 0 1em;
+    margin: 0.5em 0;
+}
+
+.contact-form fieldset textarea {
+    margin: 0.5em 0;
+}
+
+.contact-form input[type="text"], select, textarea {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.contact-form input[type="radio"] {
+    width: fit-content;
+    margin-left: 1em;
+}
+
+.contact-form input[type="radio"]:first-child {
+    margin-top: 1em;
+}
+
+.contact-form label {
+    width: fit-content;
+}
+
+.contact-form div:has(input[type="radio"]) {
+    width: fit-content;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -16,7 +16,7 @@
             <a href="index.html">Home</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="skills.html">Skills</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active-page">Contact</a>
         </nav>
     </header>
     <main>
@@ -24,7 +24,7 @@
         <section>
             <p>Find me here:</p>
             <div class="contact-links">
-                <a href="https://github.com/28tabercrombie" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+                <a href="https://github.com/28tabercrombie" target="_blank" class="btn"><i class="fa-brands fa-github"></i>GitHub</a>
                 <a href="https://modrinth.com/user/TryroT136" target="_blank"><img src="assets/modrinth.svg" alt="Modrinth Icon">Modrinth</a>
                 <a href="https://four.slambodia.com" target="_blank"><img src="assets/slambodia.svg" alt="Slambodia Icon">Slambodia</a>
                 <a href="https://www.shadertoy.com/user/TryroT136" target="_blank"><img src="assets/shadertoy.svg" alt="Shadertoy Icon">Shadertoy</a>
@@ -43,5 +43,19 @@
             <a href="contact.html">Contact</a>
         </div>
     </footer>
+    <noscript>
+        <style>
+            main {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        let main = document.querySelector("main");
+        main.style.setProperty("opacity", "0");
+        window.onload = () => {
+            main.style.setProperty("opacity", "1", "important");
+        }
+    </script>
 </body>
 </html>

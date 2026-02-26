@@ -1,0 +1,137 @@
+/* Mobile CSS */
+body {
+    font-size: 1em;
+}
+
+section {
+    padding: 1em;
+}
+
+.flex-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+header {
+    flex-direction: column;
+    gap: 1em;
+}
+
+header ul {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0;
+}
+
+header ul li {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0.5em 0;
+    border-bottom: 2px solid #7d7d7d;
+}
+
+header ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.1em 0;
+}
+
+header img {
+    padding: 0.5em 0 0 0;
+}
+
+.brands {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-image: url('../images/bike_hero_mobile.jpg');
+    background-position: center;
+    height: 120vh;
+    padding: 1em 6em 0 6em;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-top: 0.5em;
+}
+
+/* The rest */
+.how-it-works p {
+    font-size: 1em;
+}
+
+.how-it-works img {
+    width: 50%;
+}
+
+.who-we-are {
+    font-size: 1em;
+    padding: 1.5em;
+}
+
+.testimonials {
+    padding: 2em;
+}
+
+.testimonials .flex-item {
+    font-size: 1em;
+}
+
+.ready-to-sell h3 {
+    font-size: 2em;
+}
+
+.ready-to-sell {
+    padding: 3em;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Inventory Page */
+.bike .flex-container {
+    flex-direction: column;
+}
+
+.bike img, .bike table, .bike .flex-item {
+    width: 100%;
+}
+
+/* On mobile allow the first table column to wrap so long labels don't force a wide column */
+.bike th:first-child, .bike td:first-child {
+    white-space: normal; /* allow wrapping between words */
+    /* Prevent breaking inside words (keeps letters together) */
+    word-break: normal;
+    /* Allow wrapping at word boundaries when needed */
+    overflow-wrap: break-word;
+    hyphens: auto; /* allow hyphenation where supported */
+}
+
+/* Contact */
+.contact-form {
+    width: 100%;
+    min-width: initial;
+}
+
+.contact {
+    width: 100%;
+}
+
+.contact h1 {
+    padding: 0 0.25em 0 0.25em;
+}
+
+.contact input.btn {
+    margin-left: 50%;
+    translate: -50%;
+    font-size: 2em;
+}

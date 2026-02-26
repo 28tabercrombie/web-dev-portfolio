@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Tieg Abercrombie</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/b3dae35265.js" crossorigin="anonymous"></script>
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .error-container .icon {
+            --time: 0;
+            font-size: 8rem;
+            animation: float 8s infinite linear;
+        }
+        .error-container .icon i {
+            color: #ff235a75;
+        }
+        @keyframes float {
+            /* transform: translateX(calc(cos(var(--time)) * 5px)) translateY(calc(sin(var(--time)) * 10px)) rotate(calc(cos(var(--time)) * 5deg)); */
+            0%   { transform: translateX(5px) translateY(0px) rotate(5deg); }
+            5%   { transform: translateX(4.76px) translateY(3.12px) rotate(4.76deg); }
+            10%  { transform: translateX(4.05px) translateY(5.88px) rotate(4.05deg); }
+            15%  { transform: translateX(2.94px) translateY(8.09px) rotate(2.94deg); }
+            20%  { transform: translateX(1.55px) translateY(9.51px) rotate(1.55deg); }
+            25%  { transform: translateX(0px) translateY(10px) rotate(0deg); }
+            30%  { transform: translateX(-1.55px) translateY(9.51px) rotate(-1.55deg); }
+            35%  { transform: translateX(-2.94px) translateY(8.09px) rotate(-2.94deg); }
+            40%  { transform: translateX(-4.05px) translateY(5.88px) rotate(-4.05deg); }
+            45%  { transform: translateX(-4.76px) translateY(3.12px) rotate(-4.76deg); }
+            50%  { transform: translateX(-5px) translateY(0px) rotate(-5deg); }
+            55%  { transform: translateX(-4.76px) translateY(-3.12px) rotate(-4.76deg); }
+            60%  { transform: translateX(-4.05px) translateY(-5.88px) rotate(-4.05deg); }
+            65%  { transform: translateX(-2.94px) translateY(-8.09px) rotate(-2.94deg); }
+            70%  { transform: translateX(-1.55px) translateY(-9.51px) rotate(-1.55deg); }
+            75%  { transform: translateX(0px) translateY(-10px) rotate(0deg); }
+            80%  { transform: translateX(1.55px) translateY(-9.51px) rotate(1.55deg); }
+            85%  { transform: translateX(2.94px) translateY(-8.09px) rotate(2.94deg); }
+            90%  { transform: translateX(4.05px) translateY(-5.88px) rotate(4.05deg); }
+            95%  { transform: translateX(4.76px) translateY(-3.12px) rotate(4.76deg); }
+            100% { transform: translateX(5px) translateY(0px) rotate(5deg); }
+        }
+        @property --time {
+            syntax: '<number>';
+            initial-value: 0.0;
+            inherits: false;
+        }
+        .error-container h1 {
+            font-size: 2.5rem;
+            margin: 20px 0 10px;
+        }
+        .error-container p {
+            font-size: 1.2rem;
+            margin: 0 0 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="https://placehold.co/400/" alt="Tieg Abercrombie Logo">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="error-container">
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h1>Page Not Found</h1>
+            <p>Sorry, the page you are looking for could not be found.</p>
+            <a href="index.html" class="btn-alt">Go to Homepage</a>
+        </div>
+    </main>
+    <footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>Tieg Abercrombie</h3>
+            <p>A passionate developer who enjoys creating websites and exploring new technologies.</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/skills.html">Skills</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section social">
+            <h3>Connect With Me</h3>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Tieg Abercrombie</p>
+    </div>
+</footer>
+
+</body>
+</html>

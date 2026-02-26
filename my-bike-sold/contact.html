@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bike Sold</title>
+    <script src="https://kit.fontawesome.com/889ee9a70e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile.css" media="only screen and (max-width: 768px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Made by Tieg Abercrombie-->
+    <header>
+        <img src="images/mybikesold_logo.svg" alt="My Bike Sold Logo">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="inventory.html">INVENTORY</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </header>
+
+    <section class="contact">
+        <h1>Provide Info on a Bike You Want to Sell</h1>
+        <p>Please provide your name, address, and bike details by filling out the following form. Note that the required fields are followed by an asterisk *.</p>
+
+        <form>
+            <div class="contact-form">
+                <fieldset>
+                    <legend><h3>Personal Details</h3></legend>
+                    <div>
+                        <label for="fname">First Name<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="fname" name="fname" placeholder="Your first name"><br>
+                    </div>
+                    <div>
+                        <label for="lname">Last Name<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="lname" name="lname" placeholder="Your last name"><br>
+                    </div>
+                    <div>
+                        <label for="phone">Phone<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number"><br>
+                    </div>
+                    <div>
+                        <label for="email">Email<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="email" name="email" placeholder="Email Address"><br>
+                    </div>
+                    <div>
+                        <label for="address">Street Address<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="address" name="address" placeholder=" Street Address"><br>
+                    </div>
+                    <div>
+                        <label for="zip">Zip Code<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="zip" name="zip" placeholder="Zip Code"><br>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="contact-form">
+                <fieldset>
+                    <legend><h3>Motorcycle Details</h3></legend>
+                    <div>
+                        <label for="vin">VIN Number<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="vin" name="vin" placeholder="VIN Number"><br>
+                    </div>
+
+                    <div>
+                        <label for="year">Year<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="year" name="year" placeholder="Year"><br>
+                    </div>
+
+                    <div>
+                        <label for="year">Make<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="make" name="make" placeholder="Make"><br>
+                    </div>
+
+                    <div>
+                        <label for="year">Model<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="model" name="model" placeholder="Model"><br>
+                    </div>
+
+                    <div>
+                        <label for="year">Miles<span class="required" title="Required">*</span></label><br>
+                        <input type="text" id="miles" name="miles" placeholder="Miles"><br>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>Color</label>
+                        <div class="flex-row">
+                            <div>
+                                <input type="radio" id="silver" name="color" value="silver" style="height:1em;">
+                                <label for="silver">silver</label>
+                            </div>
+        
+                            <div>
+                                <input type="radio" id="black" name="color" value="black" style="height:1em;">
+                                <label for="black">black</label>
+                            </div>
+        
+                            <div>
+                                <input type="radio" id="red" name="color" value="red" style="height:1em;">
+                                <label for="red">red</label>
+                            </div>
+        
+                            <div>
+                                <input type="radio" id="orange" name="color" value="orange" style="height:1em;">
+                                <label for="orange">orange</label>
+                            </div>
+        
+                            <div>
+                                <input type="radio" id="blue" name="color" value="blue" style="height:1em;">
+                                <label for="blue">blue</label>
+                            </div>
+        
+                            <div>
+                                <input type="radio" id="green" name="color" value="green" style="height:1em;">
+                                <label for="green">green</label>
+                            </div>
+        
+                            <div>
+                                <input type="radio" id="other" name="color" value="other" style="height:1em;">
+                                <label for="other">other</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <label >Is the bike in your name?</label>
+                        <div>
+                            <div>
+                                <input type="radio" id="nameyes" name="yourname" value="yes" style="height:1em;">
+                                <label for="nameyes">Yes</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="nameno" name="yourname" value="no" style="height:1em;">
+                                <label for="nameno">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <label>Do you have the title?</label><br>
+                        <div>
+                            <div>
+                                <input type="radio" id="titleyes" name="title" value="yes" style="height:1em;">
+                                <label for="titleyes">Yes</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="titleno" name="title" value="no" style="height:1em;">
+                                <label for="titleno">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <label>Do you have any liens on the vehicle?</label><br>
+                        <div>
+                            <div>
+                                <input type="radio" id="liensyes" name="liens" value="yes" style="height:1em;">
+                                <label for="liensyes">Yes</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="liensno" name="liens" value="no" style="height:1em;">
+                                <label for="liensno">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <label for="payoff">What is your estimated payoff?</label><br>
+                        <input type="text" id="payoff" name="payoff"><br>
+                    </div>
+                    <div>
+                        <label for="scratch">List any dents or scratches and mechanical issues with your bike</label><br>
+                        <textarea id="scratch" name="scratch" rows="10"></textarea><br>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Submit form" class="btn">
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <p>1-999-999-9999 | info@yourbikesold.com</p>
+        <p>160 North Road, Big City, CA 11111</p>
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+        </ul>
+        <p>Copyright 2025. All rights reserved | <a href="#">Privacy Policy</a> <a href="#">Terms &amp; Conditions</a></p>
+    </footer>
+</body>
+</html>
