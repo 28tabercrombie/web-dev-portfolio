@@ -1,125 +1,55 @@
-// Define global variables and functions that the HTML onclick events can access
-const images = [
-    '/assets/images/slide_0.jpg',
-    '/assets/images/slide_1.jpg',
-    '/assets/images/slide_2.jpg',
-    '/assets/images/slide_3.jpg'
-];
+const images = ['/assets/images/slide_0.jpg', '/assets/images/slide_1.jpg', '/assets/images/slide_2.jpg', '/assets/images/slide_3.jpg'];
+let currentIndex = 0, autoSlideTimer, transitionTimeout;
 
-let currentImageIndex = 0;
-let carouselHero, crossfadeLayer, bubbles, carouselSection, loadingIndicator;
-const slideInterval = 5000;
-const transitionDuration = 1000;
-let autoSlideTimer;
-let transitionTimeoutId = null;
-
-// Helper functions (defined globally)
-function updateBubbles(index) {
-    bubbles.forEach(bubble => bubble.classList.remove('carousel-bubble-active'));
-    bubbles[index].classList.add('carousel-bubble-active');
-}
-
-function snapToStableState() {
-    if (transitionTimeoutId) {
-        clearTimeout(transitionTimeoutId);
-        transitionTimeoutId = null;
-        carouselHero.style.backgroundImage = crossfadeLayer.style.backgroundImage;
-        crossfadeLayer.style.opacity = 0;
-    }
-}
-
-function instantImageChange(newIndex) {
-    snapToStableState();
-    currentImageIndex = newIndex;
-    carouselHero.style.backgroundImage = `url('${images[newIndex]}')`;
-    updateBubbles(newIndex);
-}
-
-function fadeToImage(newIndex) {
-    snapToStableState();
-    updateBubbles(newIndex); 
-
-    crossfadeLayer.style.backgroundImage = `url('${images[newIndex]}')`;
-
-    requestAnimationFrame(() => {
-        crossfadeLayer.style.opacity = 1;
-    });
-
-    transitionTimeoutId = setTimeout(() => {
-        carouselHero.style.backgroundImage = `url('${images[newIndex]}')`;
-        crossfadeLayer.style.opacity = 0;
-        currentImageIndex = newIndex;
-        transitionTimeoutId = null;
-    }, transitionDuration);
-}
-
-// Global handler function linked to the HTML
-window.navigateCarousel = function(directionOrIndex) {
-    let newIndex;
-    
-    if (typeof directionOrIndex === 'number') {
-        newIndex = directionOrIndex;
-    } else if (directionOrIndex === 'next') {
-        newIndex = (currentImageIndex + 1) % images.length;
-    } else if (directionOrIndex === 'prev') {
-        newIndex = (currentImageIndex - 1 + images.length) % images.length;
-    }
-
-    if (newIndex !== currentImageIndex) {
-        instantImageChange(newIndex);
-        resetAutoSlide();
-    }
+// DOM Elements
+const el = (id) => document.getElementById(id);
+const ui = {
+    hero: el('carousel-hero'),
+    fade: el('carousel-crossfade'),
+    bubbles: document.getElementsByClassName('carousel-bubble'),
+    section: el('carousel-section'),
+    loading: el('carousel-loading')
 };
 
-// Timer logic
-function resetAutoSlide() {
+function updateCarousel(newIndex, instant = false) {
+    // Clear any pending transitions/timers
+    clearTimeout(transitionTimeout);
     clearInterval(autoSlideTimer);
-    autoSlideTimer = setInterval(() => {
-        const nextIndex = (currentImageIndex + 1) % images.length;
-        fadeToImage(nextIndex);
-    }, slideInterval);
+
+    // Update Bubbles
+    [...ui.bubbles].forEach((b, i) => b.classList.toggle('carousel-bubble-active', i === newIndex));
+
+    const url = `url('${images[newIndex]}')`;
+
+    if (instant) {
+        ui.hero.style.backgroundImage = url;
+        ui.fade.style.opacity = 0;
+    } else {
+        ui.fade.style.backgroundImage = url;
+        ui.fade.style.opacity = 1;
+        transitionTimeout = setTimeout(() => {
+            ui.hero.style.backgroundImage = url;
+            ui.fade.style.opacity = 0;
+        }, 1000); // transitionDuration
+    }
+
+    currentIndex = newIndex;
+    autoSlideTimer = setInterval(() => updateCarousel((currentIndex + 1) % images.length), 5000);
 }
 
-/**
- * Preloads all images using Promises and JS Image objects.
- */
-function preloadImages(imageUrls) {
-    const promises = imageUrls.map(url => {
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = reject;
-        });
-    });
-    return Promise.all(promises);
-}
+// Global handler for HTML onclick
+window.navigateCarousel = (dir) => {
+    let n = typeof dir === 'number' ? dir : (currentIndex + (dir === 'next' ? 1 : -1) + images.length) % images.length;
+    if (n !== currentIndex) updateCarousel(n, true);
+};
 
-// DOM content loaded event for initial setup
+// Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Assign DOM elements to global variables
-    carouselHero = document.getElementById('carousel-hero');
-    crossfadeLayer = document.getElementById('carousel-crossfade');
-    bubbles = document.querySelectorAll('.carousel-bubble');
-    carouselSection = document.getElementById('carousel-section');
-    loadingIndicator = document.getElementById('carousel-loading');
-
-    // Start preloading the images first
-    preloadImages(images)
+    Promise.all(images.map(src => new Promise(res => { const img = new Image(); img.onload = res; img.src = src; })))
         .then(() => {
-            // All images are now in the browser cache.
-            console.log('All carousel images preloaded!');
-            
-            // Hide the loading indicator and show the carousel
-            loadingIndicator.style.display = 'none';
-            carouselSection.style.display = 'block'; 
-
-            // Initialize the carousel now that assets are ready
-            instantImageChange(currentImageIndex);
-            resetAutoSlide();
+            ui.loading.style.display = 'none';
+            ui.section.style.display = 'block';
+            updateCarousel(0, true);
         })
-        .catch(error => {
-            console.error('Failed to load one or more images', error);
-            loadingIndicator.textContent = 'Error loading carousel images.';
-        });
+        .catch(() => ui.loading.textContent = 'Error loading images.');
 });

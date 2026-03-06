@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Tieg Abercrombie</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="https://placehold.co/400/202050/ff2020/png?text=icon" type="image/x-icon">
     <script src="https://kit.fontawesome.com/b3dae35265.js" crossorigin="anonymous"></script>
+    <noscript>
+        <style>
+            main {
+                opacity: 1 !important;
+            }
+            .carousel-container {
+                display: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <header>
         <a href="index.html">
-            <img src="https://placehold.co/400/202050/ff2020/png?text=icon" alt="">
+            <img src="https://placehold.co/400/202050/ff2020/png?text=icon" alt="Logo">
         </a>
         <nav>
             <a href="/index.html" class="active-page">Home</a>
@@ -24,21 +34,21 @@
         <h1>Tieg Abercrombie</h1>
         <div class="flex-col carousel-container">
                 <div class="flex-row">
-                    <button class="arrow arrow-left" onclick="navigateCarousel('prev')">
+                    <div class="arrow arrow-left" onclick="navigateCarousel('prev')">
                         <i class="fa-solid fa-angle-left"></i>
-                    </button>
+                    </div>
                     <div class="carousel-img" id="carousel-hero">
                         <div id="carousel-crossfade"></div>
                     </div>
-                    <button class="arrow arrow-right" onclick="navigateCarousel('next')">
+                    <div class="arrow arrow-right" onclick="navigateCarousel('next')">
                         <i class="fa-solid fa-angle-right"></i>
-                    </button>
+                    </div>
                 </div>
                 <div class="carousel-bubbles">
-                    <div class="carousel-bubble carousel-bubble-active" onclick="navigateCarousel(0)"></div>
-                    <div class="carousel-bubble" onclick="navigateCarousel(1)"></div>
-                    <div class="carousel-bubble" onclick="navigateCarousel(2)"></div>
-                    <div class="carousel-bubble" onclick="navigateCarousel(3)"></div>
+                    <div class="carousel-bubble carousel-bubble-active" onclick="navigateCarousel(0)"><div></div></div>
+                    <div class="carousel-bubble" onclick="navigateCarousel(1)"><div></div></div>
+                    <div class="carousel-bubble" onclick="navigateCarousel(2)"><div></div></div>
+                    <div class="carousel-bubble" onclick="navigateCarousel(3)"><div></div></div>
                 </div>
         </div>
         <section>
@@ -121,16 +131,6 @@
         <p>&copy; 2025 Tieg Abercrombie</p>
     </div>
 </footer>
-<noscript>
-    <style>
-        main {
-            opacity: 1 !important;
-        }
-        .carousel-container {
-            display: none !important;
-        }
-    </style>
-</noscript>
 <script>
     let main = document.querySelector("main");
     main.style.setProperty("opacity", "0");
@@ -152,6 +152,6 @@
         document.getElementById("image").src = images[index];
     }
 </script> -->
-<script src="./js/carousel.js"></script>
+<script src="/js/carousel.js"></script>
 </body>
 </html>

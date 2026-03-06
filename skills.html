@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills | Tieg Abercrombie</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b3dae35265.js" crossorigin="anonymous"></script>
+    <noscript>
+        <style>
+            main {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <header>
         <a href="index.html">
-            <img src="https://placehold.co/400/" alt="">
+            <img src="https://placehold.co/400/" alt="Logo">
         </a>
         <nav>
             <a href="index.html">Home</a>
@@ -22,7 +29,7 @@
     <main>
         <h1>Skills</h1>
         <section>
-            <p>
+            <div>
                 I am experienced in these languages:
                 <ul>
                     <li><i class="fa-brands fa-html5"></i>HTML</li>
@@ -30,7 +37,7 @@
                     <li><i class="fa-brands fa-square-js"></i>JavaScript</li>
                     <li><i class="fa-brands fa-node-js"></i>NodeJS</li>
                     <li><i class="fa-brands fa-python"></i>Python</li>
-                    <li><img src="assets/cpp.svg" alt="CPP Icon" class="img-icon"> C/C++</li>
+                    <li><img src="/assets/cpp.svg" alt="CPP Icon" class="img-icon"> C/C++</li>
                     <li>GLSL</li>
                     <li><i class="fa-brands fa-java"></i>Java</li>
                     <li>Lua</li>
@@ -54,7 +61,7 @@
                     <li>Making small games in unconventional ways (like in Desmos for example)</li>
                     <li>Improvizing to work around technological limitations</li>
                 </ul>
-            </p>
+            </div>
         </section>
     </main>
     <footer>
@@ -66,13 +73,6 @@
             <a href="contact.html">Contact</a>
         </div>
     </footer>
-    <noscript>
-        <style>
-            main {
-                opacity: 1 !important;
-            }
-        </style>
-    </noscript>
     <script>
         let main = document.querySelector("main");
         main.style.setProperty("opacity", "0");
